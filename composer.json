@@ -1,5 +1,5 @@
 {
-  "name": "Stevecreekmore/laravel-favorite",
+  "name": "stevecreekmore/laravel-favorite",
   "description": "User favorite system for Laravel.",
   "license": "MIT",
   "authors": [
@@ -14,7 +14,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Stevecreekmore\\LaravelFavorite\\": "src"
+      "stevecreekmore\\LaravelFavorite\\": "src"
     }
   },
   "autoload-dev": {
@@ -31,7 +31,7 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Stevecreekmore\\LaravelFavorite\\FavoriteServiceProvider"
+        "stevecreekmore\\LaravelFavorite\\FavoriteServiceProvider"
       ]
     }
   },

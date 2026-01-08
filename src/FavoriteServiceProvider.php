@@ -1,6 +1,6 @@
 <?php
 
-namespace Stevecreekmore\LaravelFavorite;
+namespace stevecreekmore\LaravelFavorite;
 
 use Illuminate\Support\ServiceProvider;
 

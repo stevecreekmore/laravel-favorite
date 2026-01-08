@@ -4,7 +4,7 @@ return [
     /*
      * Model class name for Favorite
      */
-    'favorite_model' => \Stevecreekmore\LaravelFavorite\Favorite::class,
+    'favorite_model' => \stevecreekmore\LaravelFavorite\Favorite::class,
 
     /*
      * Table name for favorites
