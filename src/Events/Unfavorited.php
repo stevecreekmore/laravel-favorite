@@ -1,6 +1,6 @@
 <?php
 
-namespace stevecreekmore\LaravelFavorite\Events;
+namespace Stevecreekmore\LaravelFavorite\Events;
 
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Foundation\Events\Dispatchable;

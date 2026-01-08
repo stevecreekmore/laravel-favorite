@@ -1,12 +1,12 @@
 <?php
 
-namespace stevecreekmore\LaravelFavorite\Traits;
+namespace Stevecreekmore\LaravelFavorite\Traits;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Collection;
-use stevecreekmore\LaravelFavorite\Events\Favorited;
-use stevecreekmore\LaravelFavorite\Events\Unfavorited;
+use Stevecreekmore\LaravelFavorite\Events\Favorited;
+use Stevecreekmore\LaravelFavorite\Events\Unfavorited;
 
 trait CanFavorite
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace stevecreekmore\LaravelFavorite\Traits;
+namespace Stevecreekmore\LaravelFavorite\Traits;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
