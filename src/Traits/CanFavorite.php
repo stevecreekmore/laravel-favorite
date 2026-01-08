@@ -50,7 +50,7 @@ trait CanFavorite
             throw new \InvalidArgumentException('The model must use the CanBeFavorited trait.');
         }
 
-        $relation = $this->favorites()
+        $relation = $this->favoritesGiven()
             ->where('favoriteable_id', $object->getKey())
             ->where('favoriteable_type', $object->getMorphClass())
             ->first();
@@ -88,14 +88,14 @@ trait CanFavorite
             throw new \InvalidArgumentException('The model must use the CanBeFavorited trait.');
         }
 
-        if ($this->relationLoaded('favorites')) {
-            return $this->favorites
+        if ($this->relationLoaded('favoritesGiven')) {
+            return $this->favoritesGiven
                 ->where('favoriteable_id', $object->getKey())
                 ->where('favoriteable_type', $object->getMorphClass())
                 ->isNotEmpty();
         }
 
-        return $this->favorites()
+        return $this->favoritesGiven()
             ->where('favoriteable_id', $object->getKey())
             ->where('favoriteable_type', $object->getMorphClass())
             ->exists();
@@ -104,7 +104,7 @@ trait CanFavorite
     /**
      * Get all favorites.
      */
-    public function favorites(): HasMany
+    public function favoritesGiven(): HasMany
     {
         return $this->hasMany(
             config('favorite.favorite_model'),
@@ -117,7 +117,7 @@ trait CanFavorite
      */
     public function getFavorited(string $model): Collection
     {
-        return $this->favorites()
+        return $this->favoritesGiven()
             ->where('favoriteable_type', (new $model)->getMorphClass())
             ->get()
             ->pluck('favoriteable');
@@ -128,7 +128,7 @@ trait CanFavorite
      */
     public function attachFavoriteStatus($favoriteables, callable $resolver = null)
     {
-        $favorites = $this->favorites()
+        $favorites = $this->favoritesGiven()
             ->get()
             ->keyBy(function ($item) {
                 return sprintf('%s-%s', $item->favoriteable_type, $item->favoriteable_id);

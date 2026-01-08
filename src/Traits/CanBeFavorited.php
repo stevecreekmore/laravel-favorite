@@ -10,7 +10,7 @@ trait CanBeFavorited
     /**
      * Get all favorites for this model.
      */
-    public function favorites(): MorphMany
+    public function favoritesReceived(): MorphMany
     {
         return $this->morphMany(
             config('favorite.favorite_model'),
@@ -42,13 +42,13 @@ trait CanBeFavorited
             return false;
         }
 
-        if ($this->relationLoaded('favorites')) {
-            return $this->favorites
+        if ($this->relationLoaded('favoritesReceived')) {
+            return $this->favoritesReceived
                 ->where(config('favorite.user_foreign_key', 'user_id'), $user->getKey())
                 ->isNotEmpty();
         }
 
-        return $this->favorites()
+        return $this->favoritesReceived()
             ->where(config('favorite.user_foreign_key', 'user_id'), $user->getKey())
             ->exists();
     }
@@ -58,7 +58,7 @@ trait CanBeFavorited
      */
     public function favoritersCount(): int
     {
-        return $this->favorites()->count();
+        return $this->favoritesReceived()->count();
     }
 
     /**
@@ -66,7 +66,7 @@ trait CanBeFavorited
      */
     public function scopeFavoritedBy($query, Model $user)
     {
-        return $query->whereHas('favorites', function ($q) use ($user) {
+        return $query->whereHas('favoritesReceived', function ($q) use ($user) {
             $q->where(config('favorite.user_foreign_key', 'user_id'), $user->getKey());
         });
     }
@@ -76,8 +76,8 @@ trait CanBeFavorited
      */
     public function scopeOrderByFavoritesCount($query, string $direction = 'desc')
     {
-        return $query->withCount('favorites')
-            ->orderBy('favorites_count', $direction);
+        return $query->withCount('favoritesReceived')
+            ->orderBy('favorites_received_count', $direction);
     }
 
     /**
