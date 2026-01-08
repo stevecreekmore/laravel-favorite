@@ -1,5 +1,9 @@
 # Laravel Favorite
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/stevecreekmore/laravel-favorite.svg?style=flat-square)](https://packagist.org/packages/stevecreekmore/laravel-favorite)
+[![Tests](https://img.shields.io/github/actions/workflow/status/stevecreekmore/laravel-favorite/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/stevecreekmore/laravel-favorite/actions/workflows/run-tests.yml)
+[![Total Downloads](https://img.shields.io/packagist/dt/stevecreekmore/laravel-favorite.svg?style=flat-square)](https://packagist.org/packages/stevecreekmore/favorite)
+
 User favorite system for Laravel.
 
 ## Installation
